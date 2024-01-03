@@ -1,4 +1,5 @@
-const urlServer=`http://127.0.0.1:8080`;
+//const urlServer=`http://127.0.0.1:8080`;
+const urlServer=`https://services-js288.onrender.com`;
 const urlImage=`https://res.cloudinary.com/dzosl57og/image/upload/v1/images/`;
 
 const apiCuahang=()=>{

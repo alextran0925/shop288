@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Shop - Tivi</title>
+    <title>Shop - Mobile</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,12 +31,12 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Products</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href=".">Tivi</a></li>
+                            <li><a class="dropdown-item" href="../tivi/index.html">Tivi</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#!">Mobile</a></li>
-                            <li><a class="dropdown-item" href="#!">Food</a></li>
+                            <li><a class="dropdown-item" href=".">Mobile</a></li>
+                            <li><a class="dropdown-item" href="../food/index.html">Food</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="../contact/">Contact</a></li>
@@ -81,8 +81,8 @@
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            <h4>Tivi</h4>
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="thTivi">
+            <h4>Mobile</h4>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="thMobile">
             </div>
             
         </div>
@@ -109,28 +109,25 @@
 
     <script src="../js/api.js"></script>
     <script src="../js/home.js"></script>
-    <script src="../js/tivi.js"></script>
-    <script src="../js/cart.js"></script>
+    <script src="../js/mobile.js"></script>
     <script src="../js/modal.js"></script>
+    <script src="../js/cart.js"></script>
     <script>
-    if (sessionStorage.getItem("carts") != undefined) {
-      carts = JSON.parse(sessionStorage.getItem("carts"))
-      Th_Gio_hang.innerHTML = carts.length;
-
-    }
         apiCuahang().then((result) => {
-            //console.log(result);
+            console.log(result);
             xuatCuahang(result, thCuahang);
-            apiTivi().then((result) => {
+            apiDienthoai().then((result) => {
                 dsTivi=result.noiDung;
                 ds=result.noiDung;
-                lst.Tivi = result.noiDung;
-               taoNhom();
                 //console.log(dsNhom);
+                lst.Mobile = result.noiDung;
+
+               taoNhom();
+               // console.log(dsNhom);
                 xuatNhom(dsNhom, thBtnNhom);
-                xuatTivi(dsTivi,thTivi) 
+                xuatTivi(dsTivi,thMobile) 
                 locGia(thGia);
-                xuatKhuyenmai(result.noiDung, thTivi, 1);
+                xuatKhuyenmai(result.noiDung, thMobile, 2);
                 
             })
         })
